@@ -20,14 +20,14 @@ Get debugging skills.
 
 ### Part 2: Write an application named “wait” in folder “FreeNOS-1.0.3\bin\wait”
 
-* [ ] It should work similarly to the wait command that comes with Ubuntu. (In your terminal, do “man wait” to learn more.) It should be able to wait for a background process (e.g. “sleep 30 &”) to finish and return.
-* [ ] It should follow the application code structure like the “sleep” command of FreeNOS.
+* [x] It should work similarly to the wait command that comes with Ubuntu. (In your terminal, do “man wait” to learn more.) It should be able to wait for a background process (e.g. “sleep 30 &”) to finish and return.
+* [x] It should follow the application code structure like the “sleep” command of FreeNOS.
 
 ### Part 3: Record a 3-minute (approx..) screencast with your voice (facial image is optional but encouraged)
 
-* [ ] Introduce yourselves;
-* [ ] Demo kill a process or two;
-* [ ] Show off your contribution to FreeNOS: what you did to get rid of the bug? What debugger did you use?
+* [x] Introduce yourselves;
+* [x] Demo kill a process or two;
+* [x] Show off your contribution to FreeNOS: what you did to get rid of the bug? What debugger did you use?
 
 ## Link to the GitHub repository
 
@@ -35,7 +35,6 @@ Get debugging skills.
 
 ## Link to the screencast video
 
-[Screencast Video]( https://www.youtube.com/ "Youtube")
-Video created with [OBS Studio](https://obsproject.com/).
+[Screencast Video]( https://www.youtube.com/watch?v=NL24W5JA3YU&ab_channel=ThomasPickering "Youtube")
 
 ## Notes
