@@ -38,3 +38,5 @@ Get debugging skills.
 [Screencast Video]( https://www.youtube.com/watch?v=NL24W5JA3YU&ab_channel=ThomasPickering "Youtube")
 
 ## Notes
+
+Screencast Software & Version: nVidia Geforce Experience (Shadowplay Tool) Version 3.23.0.74
