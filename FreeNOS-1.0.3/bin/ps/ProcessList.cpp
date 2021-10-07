@@ -16,6 +16,8 @@
  */
 
 #include <Types.h>
+#include <stdlib.h>
+#include <string.h>
 #include <Macros.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -26,16 +28,23 @@ ProcessList::ProcessList(int argc, char **argv)
     : POSIXApplication(argc, argv)
 {
     parser().setDescription("Output system process list");
+    parser().registerFlag('l', "show-priority", "List all files with priority levels appended");
 }
 
 ProcessList::Result ProcessList::exec()
 {
     const ProcessClient process;
     String out;
-
+    bool normal = arguments().get("show-priority") == ZERO;
+    
     // Print header
-    out << "ID  PARENT  USER GROUP STATUS     CMD\r\n";
-
+    // "!normal" means -l flag was detected
+    if(!normal) {
+    	out << "ID  PARENT  USER GROUP STATUS      CMD   	           PRIORITY\r\n";
+    }
+    else {
+    	out << "ID  PARENT  USER GROUP STATUS      CMD\r\n";
+    }
     // Loop processes
     for (ProcessID pid = 0; pid < ProcessClient::MaximumProcesses; pid++)
     {
@@ -48,11 +57,22 @@ ProcessList::Result ProcessList::exec()
 
             // Output a line
             char line[128];
-            snprintf(line, sizeof(line),
+            // Check if we are printing with priorities or not (normal = omit priority level) 
+           if(normal) {
+            	snprintf(line, sizeof(line),
                     "%3d %7d %4d %5d %10s %32s\r\n",
                      pid, info.kernelState.parent,
                      0, 0, *info.textState, *info.command);
-            out << line;
+           	 out << line;
+            }
+            else {
+            	snprintf(line, sizeof(line),
+                    "%3d %7d %4d %5d %10s %32s %2d\r\n",
+                     pid, info.kernelState.parent,
+                     0, 0, *info.textState, *info.command, info.kernelState.priority_level);
+            	out << line;
+            }
+            
         }
     }
 

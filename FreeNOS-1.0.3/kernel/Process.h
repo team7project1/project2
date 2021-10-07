@@ -71,6 +71,7 @@ class Process
         Stopped
     };
 
+
   public:
 
     /**
@@ -81,7 +82,7 @@ class Process
      * @param privileged If true, the process has unlimited access to hardware.
      * @param map Memory map to use
      */
-    Process(ProcessID id, Address entry, bool privileged, const MemoryMap &map);
+    Process(ProcessID id, Address entry, bool privileged, const MemoryMap &map, PriorityLevel = 3);
 
     /**
      * Destructor function.
@@ -106,6 +107,11 @@ class Process
      * Get Wait ID.
      */
     ProcessID getWait() const;
+
+    /**
+     * Get Priority Level
+     */
+    PriorityLevel getPriority() const;
 
     /**
      * Get wait result
@@ -254,6 +260,9 @@ class Process
 
     /** Waits for exit of this Process. */
     ProcessID m_waitId;
+
+    /** Current Priority Level of process according to scheduler. */
+    PriorityLevel m_priority;
 
     /** Wait exit result of the other Process. */
     uint m_waitResult;

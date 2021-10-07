@@ -139,6 +139,9 @@ typedef unsigned short GroupID;
 /** Process Identification Number. */
 typedef u32 ProcessID;
 
+/** Project 3 Patch: Process Priority level (1-5, low to high) */
+typedef u8 PriorityLevel;
+
 /**
  * Describes a device ID number.
  */
