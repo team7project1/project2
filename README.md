@@ -42,6 +42,8 @@ Get debugging skills.
 Screencast Software & Version: nVidia Geforce Experience (Shadowplay Tool) Version 3.23.0.74
 
 
+---
+
 # CS4310 Project 03 Prioritize It
 ## Purpose
 
