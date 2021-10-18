@@ -89,6 +89,20 @@ ProcessClient::Result ProcessClient::processInfo(const String program,
     return NotFound;
 }
 
+ProcessClient::Result ProcessClient::renicePID(const ProcessID pid, PriorityLevel pl) const {
+	const API::Result result = ProcessCtl(pid, RenicePID, (Address) pl);
+	switch (result)
+	{
+		case API::Success:
+		    return Success;
+		case API::NotFound:
+		    return NotFound;
+		default:
+		    return IOError;
+	}
+
+}
+
 ProcessID ProcessClient::findProcess(const String program) const
 {
     ProcessClient::Info info;

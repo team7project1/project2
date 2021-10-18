@@ -32,7 +32,8 @@ Process::Process(ProcessID id, Address entry, bool privileged, const MemoryMap &
     m_waitResult    = 0;
     m_wakeups       = 0;
     m_entry         = entry;
-    m_priority > 5 ? m_priority = 5 : m_priority = pLevel;
+    m_priority = 3;
+    pLevel > 5 ? m_priority = 5 : m_priority = pLevel;
     m_privileged    = privileged;
     m_memoryContext = ZERO;
     m_kernelChannel = ZERO;
@@ -78,6 +79,11 @@ ProcessID Process::getWait() const
  */
 PriorityLevel Process::getPriority() const {
     return m_priority;
+}
+
+bool Process::setPriority(PriorityLevel pl) {
+	m_priority = pl;
+	return true;
 }
 
 uint Process::getWaitResult() const

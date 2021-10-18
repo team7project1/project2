@@ -158,7 +158,16 @@ class ProcessManager
      * @return Result code
      */
     Result wakeup(Process *proc);
-
+    
+    /**
+     * Renice a process, i.e. change its scheduling priority.
+     *
+     * @param proc Process pointer
+     * @param p_priority PriorityLevel enum designation
+     *
+     * @return Result code
+     */
+    Result setPriority(Process *proc, PriorityLevel p_priority);
     /**
      * Raise kernel event for a Process
      *

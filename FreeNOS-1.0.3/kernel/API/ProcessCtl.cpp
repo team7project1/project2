@@ -34,7 +34,6 @@ API::Result ProcessCtlHandler(const ProcessID procID,
     ProcessInfo *info = (ProcessInfo *) addr;
     ProcessManager *procs = Kernel::instance()->getProcessManager();
     Timer *timer;
-
     DEBUG("#" << procs->current()->getID() << " " << action << " -> " << procID << " (" << addr << ")");
 
     // Does the target process exist?
@@ -130,6 +129,13 @@ API::Result ProcessCtlHandler(const ProcessID procID,
     case SendIRQ:
         Kernel::instance()->sendIRQ(addr >> 16, addr & 0xffff);
         break;
+
+    case RenicePID:
+    	if(!(procs->get(procID)->setPriority((PriorityLevel) addr))) {
+    		ERROR("failed to set priority for Process ID" << proc->getID());
+    		return API::IOError;
+    	}
+    	break;
 
     case InfoPID:
         info->id                = proc->getID();

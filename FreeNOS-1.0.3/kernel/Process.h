@@ -112,6 +112,8 @@ class Process
      * Get Priority Level
      */
     PriorityLevel getPriority() const;
+    
+    bool setPriority(PriorityLevel pl);
 
     /**
      * Get wait result

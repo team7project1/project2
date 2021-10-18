@@ -322,6 +322,12 @@ ProcessManager::Result ProcessManager::wakeup(Process *proc)
     }
 }
 
+ProcessManager::Result ProcessManager::setPriority(Process *proc, PriorityLevel p_priority) {
+	proc->m_priority = p_priority;
+	schedule();
+	return Success;
+}
+
 ProcessManager::Result ProcessManager::raiseEvent(Process *proc, const struct ProcessEvent *event)
 {
     const Process::Result result = proc->raiseEvent(event);

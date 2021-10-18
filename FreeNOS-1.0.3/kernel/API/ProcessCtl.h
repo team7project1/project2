@@ -52,6 +52,7 @@ typedef enum ProcessOperation
     Schedule,
     Wakeup,
     Stop,
+    RenicePID,
     Resume,
     Reset
 }
@@ -85,7 +86,8 @@ Log & operator << (Log &log, ProcessOperation op);
  * @param proc Target Process' ID.
  * @param op The operation to perform.
  * @param addr Input argument address, used for program entry point for Spawn,
- *             ProcessInfo pointer for Info.
+ *             ProcessInfo pointer for Info, PriorityLevel for renice.
+ *	        
  * @param output Output argument address (optional).
  *
  * @return API::Success on success and other API::ErrorCode on failure.

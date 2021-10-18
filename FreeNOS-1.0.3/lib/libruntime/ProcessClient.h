@@ -107,6 +107,8 @@ class ProcessClient
      * @return Result code
      */
     Result processInfo(const String program, Info &info) const;
+    
+    Result renicePID(const ProcessID pid, PriorityLevel pl) const;
 
     /**
      * Find a process by its program name.
