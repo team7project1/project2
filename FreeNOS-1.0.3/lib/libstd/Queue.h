@@ -99,7 +99,73 @@ template <class T, Size N> class Queue : public Container
 
         return false;
     }
-
+    
+    /* 
+    *  Helper function for QuickSort algorithm. Sections off parts of the queue array
+    *
+    * @param left: integer representing the leftmost index of the array to be partitioned.
+    *
+    * @param right: integer representing the rightmost index of the array to be partitioned.
+    * 
+    * @return unsigned int of the pivot index.
+    */
+    uint partition(uint left, uint right)
+    {
+    	PriorityLevel right_index = m_array[right]->getPriority();
+    	uint current_index = left - 1;
+    	
+    	for (uint j = left; j < right; j++) {
+    	       if(m_array[j]->getPriority() >= right_index) 
+    	       {
+    	          current_index++;
+    	          T temp = m_array[current_index];
+		  m_array[current_index] = m_array[j];
+		  m_array[j] = temp;
+    	       }   
+    	}
+        T temp = m_array[current_index + 1];
+    	m_array[current_index + 1] = m_array[right];
+    	m_array[right] = temp;
+    	return current_index + 1;
+    }
+    
+     /**
+     * Uses standard QuickSort Algorithm to sort the array in Descending Order.
+     *
+     * @param left: integer representing the leftmost index of the array to be sorted.
+     *
+     * @param right: integer representing the rightmost index of the array to be sorted.
+     *
+     */
+    void quickSort(uint left, uint right) 
+    {
+      	if ((left < right) && (left >= 0 && right >= 0)) {
+    	
+    		uint section_index = partition(left, right);
+    		
+    		// Recursively iterate over the partition sections.
+    		quickSort(left, section_index - 1);
+    		quickSort(section_index + 1, right);
+    		
+    	} 
+    }
+    
+    
+    // Perform sorting using QuickSort function.
+    void sortQueue() {
+    	 uint i = m_tail;
+         while((m_tail >= 0 && m_head > 0) && m_count != 0 && i < m_head)  {
+         	for(uint j=i+1; j < m_head; j++) {
+         		if(m_array[i]->getPriority() < m_array[j]->getPriority()) {
+         			T temp = m_array[i];
+         			m_array[i] = m_array[j];
+         			m_array[j] = temp;
+         		}
+         	}
+         	i++;
+         }
+    }
+    
     /**
      * Remove all items with the given value.
      *

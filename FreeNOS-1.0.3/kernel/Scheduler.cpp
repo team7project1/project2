@@ -70,6 +70,7 @@ Process * Scheduler::select()
 {
     if (m_queue.count() > 0)
     {
+        m_queue.sortQueue();
         Process *p = m_queue.pop();
         m_queue.push(p);
 
