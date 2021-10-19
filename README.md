@@ -42,20 +42,21 @@ Get hands-on with process priority scheduling implementation.
 
 ### Part 5: (10 pts) 
 
-* [ ] Record a 3-minute (approx..) screencast with your voice (facial image is optional but encouraged) and upload it to a video streaming site like Youtube. The video should include:
+* [x] Record a 3-minute (approx..) screencast with your voice (facial image is optional but encouraged) and upload it to a video streaming site like Youtube. The video should include:
 Introduce yourselves;
 Demo run your code;
 Each team member comment on your code: what did you do? Any challenges? How did you overcome them? Any new understanding or insights?
 ### Part 6:(10 pts) 
 
-* [ ] Submit a README.md file, listing:
+* [x] Submit a README.md file, listing:
 Your full names;
 
-## The link to your GitHub repo 
+## GitHub repo 
 
-[GitHub repository](https://github.com/team7project1/project2)
+[GitHub repository](https://github.com/team7project1/project2.git)
 (you should also maintain a README.md in your GitHub repo, which is updated with information about features/branches added);
 
-## The link to your screencast video.
+## Screencast video.
 
-[Screencast Video](  "Youtube")
+[Screencast Video Part 1](https://www.youtube.com/watch?v=SGQiS48h4UI "Youtube")
+[Screencast Video Part 2](https://www.youtube.com/watch?v=xQ7Fjz1mh0Q "Youtube")
