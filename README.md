@@ -21,20 +21,20 @@ Get hands-on with process priority scheduling implementation.
 
 ### Part 3: (20 pts) 
 
-* [x] Write an application named “renice” in folder “FreeNOS\bin\renice”, which should work similarly to the “renice” command on Ubuntu. (“# man renice”) This directory and code within should follow the structure of “sleep” application.
+* [x]  Download the "sc" application ("slow_calcs") and put the extracted folder in "FreeNOS\bin". Write an application named “renice” in folder “FreeNOS\bin\renice”, which should work similarly to the “renice” command on Ubuntu. (“# man renice”) This directory and code within should follow the structure of “ps” application.
       Example run: (after you implement the supporting functions in FreeNOS)
 
-      # sleep 30 &
+      # sc 360 &    #this gives your around 1 minute running time.
 
-      # sleep 45 &
+      # sc 300 &   #this gives your around 0.5 minute running time.
 
-      # ps –l #suppose the output has PID 17 for “sleep 30”
+      # ps –l #suppose the output has PID 17 for “sc 300”
 
       # renice –n 2 17 #tell Process 17 to be run at priority 2
 
-      # ps –l # make sure the priority changes for “sleep 30”
+      # ps –l # make sure the priority changes for “sc 300”
 
-      # # wait to see that “sleep 45” finish before “sleep 30”
+      # # wait to see that “sc 360” finish before “sc 300”
 
 ### Part 4: (30 pts) 
 
