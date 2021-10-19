@@ -54,7 +54,8 @@ Your full names;
 ## GitHub repo 
 
 [GitHub repository](https://github.com/team7project1/project2.git)
-(you should also maintain a README.md in your GitHub repo, which is updated with information about features/branches added);
+
+https://github.com/team7project1/project2.git
 
 ## Screencast video.
 
