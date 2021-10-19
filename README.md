@@ -58,6 +58,8 @@ Your full names;
 
 ## Screencast video.
 
-[Screencast Video Part 1](https://www.youtube.com/watch?v=SGQiS48h4UI "Youtube")
+[Screencast Video Part 1 - ps and renice demo](https://www.youtube.com/watch?v=SGQiS48h4UI "Youtube")
 
-[Screencast Video Part 2](https://www.youtube.com/watch?v=xQ7Fjz1mh0Q "Youtube")
+[Screencast Video Part 2 - backend implementation & renice](https://youtu.be/uBgt9taFSGA "Youtube")
+
+[Screencast Video Part 3 - Prority Scheduler Demonstration](https://www.youtube.com/watch?v=xQ7Fjz1mh0Q "Youtube")
